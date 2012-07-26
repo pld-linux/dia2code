@@ -1,12 +1,12 @@
 Summary:	Dia2Code generate code from a Dia diagram
 Summary(pl.UTF-8):	Dia2Code generuje kod źródłowy z diagramów Dia
 Name:		dia2code
-Version:	0.8.3
+Version:	0.8.5
 Release:	1
 License:	GPL v2+
 Group:		Development/Tools
-Source0:	http://dl.sourceforge.net/dia2code/%{name}-%{version}.tar.gz
-# Source0-md5:	af64302f4e6633f26e28f74cbfbab742
+Source0:	http://downloads.sourceforge.net/dia2code/%{name}-%{version}.tar.gz
+# Source0-md5:	482480ae0738f9618d48d47b4f5627cd
 URL:		http://dia2code.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
