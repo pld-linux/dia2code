@@ -1,12 +1,13 @@
 Summary:	Dia2Code generate code from a Dia diagram
 Summary(pl.UTF-8):	Dia2Code generuje kod źródłowy z diagramów Dia
 Name:		dia2code
-Version:	0.8.7
-Release:	3
+Version:	1.0.0
+Release:	1
 License:	GPL v2+
 Group:		Development/Tools
 Source0:	http://downloads.sourceforge.net/dia2code/%{name}-%{version}.tar.gz
-# Source0-md5:	cce262f62cf2b07f59c09e17d37f90dd
+# Source0-md5:	496a8b855c1db4143b40eb11f5adbc30
+Patch0:		dia2code-1.0.0-fix-imports.patch
 URL:		http://dia2code.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -26,12 +27,9 @@ C#, Java, PHP(4,5), Python, Ruby, shapefile oraz SQL.
 
 %prep
 %setup -q
+%patch -P0 -p1
 
 %build
-%{__aclocal}
-%{__autoheader}
-%{__automake}
-%{__autoconf}
 %configure
 
 %{__make}
@@ -42,7 +40,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{_mandir}/man1
-cp -p %{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1
+cp -p docs/%{name}.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
